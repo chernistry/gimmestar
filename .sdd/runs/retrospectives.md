@@ -25,3 +25,21 @@
 - **Duration**: 300.8s
 - **Metrics**: ChangeSize=11, FailMode=stuck_loop
 - **Notes**: State has not changed for 3 steps (Node: planner, Files: 11, Errors: 0)
+
+## Run 2025-11-27T11:38:01.647Z (ID: 975f3b13-39d3-4bb0-9004-1533c0404a4f)
+- **Goal**: приступай к выполнению тикетов
+- **Outcome**: aborted_stuck
+- **Stop Reason**: State has not changed for 3 steps (Node: planner, Files: 8, Errors: 0)
+- **Phases**: 
+- **Duration**: 397.4s
+- **Metrics**: ChangeSize=8, FailMode=stuck_loop
+- **Notes**: State has not changed for 3 steps (Node: planner, Files: 8, Errors: 0)
+
+## Run 2025-11-27T11:40:09.862Z (ID: 37a4e8f6-542c-47ba-94fe-f3d64ce1b851)
+- **Goal**: приступай к выполнению тикетов
+- **Outcome**: aborted_stuck
+- **Stop Reason**: State has not changed for 3 steps (Node: planner, Files: 0, Errors: 0)
+- **Phases**: 
+- **Duration**: 101.3s
+- **Metrics**: ChangeSize=0, FailMode=stuck_loop
+- **Notes**: State has not changed for 3 steps (Node: planner, Files: 0, Errors: 0)
