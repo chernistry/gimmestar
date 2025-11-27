@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '../contexts/AuthContext';
 import { validateState, exchangeCodeForToken } from '../utils/github-oauth';
 
-export default function CallbackPage() {
+function CallbackContent() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -49,4 +49,12 @@ export default function CallbackPage() {
   }
 
   return <div style={{ padding: '20px', textAlign: 'center' }}>Authenticating...</div>;
+}
+
+export default function CallbackPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: '20px', textAlign: 'center' }}>Loading...</div>}>
+      <CallbackContent />
+    </Suspense>
+  );
 }
