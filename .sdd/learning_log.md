@@ -13,3 +13,5 @@ Automated learnings from agent retrospectives.
 - **[2025-11-27]** (improvement): Planner looped repeatedly (7 steps) without delegating to coder or researcher, leading to no file changes and abortion.
 - **[2025-11-27]** (success): Agent terminated successfully with passing tests and no diagnostics despite no file changes, indicating correct assessment of no required actions
 - **[2025-11-27]** (improvement): Planner executed 3 times without transitioning to coder or researcher (except 1 verifier), suggesting inefficient planning loop
+- **[2025-11-27]** (success): Agent successfully completed the task, modifying 6 files and passing all tests (tsc, build, vitest) with no diagnostics
+- **[2025-11-27]** (improvement): Planner executed 6 consecutive steps with no file changes before final productive step, indicating inefficient planning loops
