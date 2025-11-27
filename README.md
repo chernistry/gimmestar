@@ -152,13 +152,20 @@ npm install -g vercel
 # Configure environment variables (see docs/deployment.md)
 vercel env add DATABASE_URL
 vercel env add ENCRYPTION_KEY
-# ... add all required variables
+vercel env add GITHUB_CLIENT_ID
+vercel env add GITHUB_CLIENT_SECRET
+vercel env add SESSION_SECRET
+vercel env add NEXT_PUBLIC_GITHUB_CLIENT_ID
+vercel env add NEXT_PUBLIC_API_URL
 
 # Deploy
 vercel --prod
 ```
 
-**Important**: Update your GitHub OAuth App callback URL after deployment.
+**Important**: 
+- Update your GitHub OAuth App callback URL after deployment
+- All environment variables are validated on application startup
+- Generate secure keys using `openssl rand -base64 32`
 
 ### Testing
 
