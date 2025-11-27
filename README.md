@@ -43,11 +43,20 @@ npm run dev
 
 ### Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory (see `.env.example`):
 
 ```env
-# Add environment variables as needed
 NODE_ENV=development
+
+# Encryption key for GitHub tokens (REQUIRED)
+# Generate with: openssl rand -base64 32
+ENCRYPTION_KEY=your_base64_encoded_32_byte_key
+```
+
+**Important**: The `ENCRYPTION_KEY` is required for the application to start. Generate a secure key using:
+
+```bash
+openssl rand -base64 32
 ```
 
 ## Project Structure
