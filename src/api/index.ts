@@ -4,6 +4,7 @@ import { validate, rules } from './middleware/validate.js';
 import { handleGitHubCallback } from './routes/auth.js';
 import { createStarRequest, getMatches } from './routes/stars.js';
 import { getProfile } from './routes/user.js';
+import { getDashboard } from './routes/dashboard.js';
 
 export function createApp(): Server {
   const app = new Server();
@@ -32,6 +33,7 @@ export function createApp(): Server {
 
   // User routes (authenticated)
   app.get('/api/user/profile', authenticate, getProfile);
+  app.get('/api/dashboard', authenticate, getDashboard);
 
   return app;
 }
