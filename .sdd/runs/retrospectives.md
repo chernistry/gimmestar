@@ -52,3 +52,12 @@
 - **Duration**: 1599.3s
 - **Metrics**: ChangeSize=5, FailMode=none
 - **Notes**: Stuck pattern: planner_to_coder>3, only docs/partial tests (5 files total), no core src/api/routes/middlewares/utils/index.ts, no src/index.ts integration, no commit. Tests 92/92 via mocks but Functional OK=false, DoD unmet despite ultra-granular plans.
+
+## Run 2025-11-27T15:09:04.339Z (ID: 30195190-ce86-4167-b13c-6275b8370184)
+- **Goal**: приступай к выполнению тикетов
+- **Outcome**: done_partial
+- **Stop Reason**: Planner-coder loop (planner_to_coder=2) with no progress on core DoD files (app/utils/auth.ts, github-oauth.ts, app/contexts/AuthContext.tsx, app/components/UserProfile.tsx/ProtectedRoute.tsx absent); only .next builds/MDs updated. Functional OK=false despite green diagnostics.
+- **Phases**: 
+- **Duration**: 1761.0s
+- **Metrics**: ChangeSize=102, FailMode=partial_completion
+- **Notes**: Planner-coder loop (planner_to_coder=2) with no progress on core DoD files (app/utils/auth.ts, github-oauth.ts, app/contexts/AuthContext.tsx, app/components/UserProfile.tsx/ProtectedRoute.tsx absent); only .next builds/MDs updated. Functional OK=false despite green diagnostics.
