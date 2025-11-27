@@ -139,11 +139,35 @@ npm run build:frontend
 npm start:frontend
 ```
 
+## Deployment
+
+See [Deployment Guide](docs/deployment.md) for detailed instructions.
+
+### Quick Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Configure environment variables (see docs/deployment.md)
+vercel env add DATABASE_URL
+vercel env add ENCRYPTION_KEY
+# ... add all required variables
+
+# Deploy
+vercel --prod
+```
+
+**Important**: Update your GitHub OAuth App callback URL after deployment.
+
 ### Testing
 
 ```bash
-# Run all tests
+# Run all tests (unit + E2E)
 npm test
+
+# Run E2E tests only
+npm run test:e2e
 
 # Run tests in watch mode
 npm run test:watch
@@ -186,3 +210,4 @@ MIT
 - [Database Schema](docs/database-schema.md)
 - [OAuth Flow](docs/oauth-flow.md)
 - [API Implementation](docs/api-implementation.md)
+- [E2E Testing](docs/e2e-testing.md)

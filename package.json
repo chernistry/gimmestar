@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
+    "test:e2e": "vitest run tests/e2e",
     "dev": "tsx watch src/index.ts",
     "dev:frontend": "next dev -p 3001",
     "start:frontend": "next start -p 3001",
