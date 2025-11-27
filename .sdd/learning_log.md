@@ -22,3 +22,5 @@ Automated learnings from agent retrospectives.
 - **[2025-11-27]** (success): Agent achieved task success with 15 file modifications, zero loops, and all tests (tsc, build, test) passing cleanly with no diagnostics.
 - **[2025-11-27]** (success): Completed task efficiently with only 3 planner steps, no loops (all counters at 0), 16 file changes, and all tests/build checks passing without diagnostics.
 - **[2025-11-27]** (improvement): Planner executed two initial steps with no file changes before the third step's 16 changes, indicating redundant planning iterations.
+- **[2025-11-27]** (success): Successfully completed task with 5 file modifications, passing all tests (typecheck, build, unit tests) and no diagnostics, using only planner nodes without loops to other agents
+- **[2025-11-27]** (improvement): Planner took 10 steps with first 5 yielding no file changes, indicating inefficiency or looping in initial planning before progress
