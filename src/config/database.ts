@@ -16,3 +16,15 @@ export function createDatabaseConnection() {
 }
 
 export type Database = ReturnType<typeof createDatabaseConnection>;
+
+// Lazy singleton instance
+let _db: Database | null = null;
+
+export const db = new Proxy({} as Database, {
+  get(target, prop) {
+    if (!_db) {
+      _db = createDatabaseConnection();
+    }
+    return (_db as any)[prop];
+  },
+});
