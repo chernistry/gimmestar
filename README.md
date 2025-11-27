@@ -48,16 +48,38 @@ Create a `.env` file in the root directory (see `.env.example`):
 ```env
 NODE_ENV=development
 
+# Database connection string (REQUIRED)
+DATABASE_URL=postgresql://user:password@localhost:5432/gimmestar
+
 # Encryption key for GitHub tokens (REQUIRED)
 # Generate with: openssl rand -base64 32
 ENCRYPTION_KEY=your_base64_encoded_32_byte_key
 ```
 
-**Important**: The `ENCRYPTION_KEY` is required for the application to start. Generate a secure key using:
+**Important**: 
+- The `ENCRYPTION_KEY` is required for the application to start. Generate a secure key using:
+  ```bash
+  openssl rand -base64 32
+  ```
+- The `DATABASE_URL` must point to a valid PostgreSQL 17+ database
+
+### Database Setup
 
 ```bash
-openssl rand -base64 32
+# Generate migration files from schema
+npm run db:generate
+
+# Apply migrations to database
+npm run db:migrate
+
+# Or push schema directly (development only)
+npm run db:push
+
+# Open Drizzle Studio (database GUI)
+npm run db:studio
 ```
+
+See [Database Schema Documentation](docs/database-schema.md) for detailed schema information.
 
 ## Project Structure
 
