@@ -5,6 +5,7 @@ import { handleGitHubCallback } from './routes/auth.js';
 import { createStarRequest, getMatches } from './routes/stars.js';
 import { getProfile } from './routes/user.js';
 import { getDashboard } from './routes/dashboard.js';
+import { submitStarRequest } from './routes/star-requests.js';
 
 export function createApp(): Server {
   const app = new Server();
@@ -17,6 +18,16 @@ export function createApp(): Server {
       codeVerifier: rules.required,
     }),
     handleGitHubCallback
+  );
+
+  // Star request routes (authenticated)
+  app.post(
+    '/api/star-requests',
+    authenticate,
+    validate({
+      repoUrl: rules.githubRepo,
+    }),
+    submitStarRequest
   );
 
   // Star routes (authenticated)

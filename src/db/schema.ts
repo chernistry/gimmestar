@@ -51,3 +51,13 @@ export const matchingQueue = pgTable('matching_queue', {
   requestIdIdx: index('matching_queue_request_id_idx').on(table.requestId),
   matchedAtIdx: index('matching_queue_matched_at_idx').on(table.matchedAt)
 }));
+
+export const rateLimits = pgTable('rate_limits', {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull().references(() => users.id),
+  action: varchar('action', { length: 50 }).notNull(),
+  count: integer('count').notNull().default(1),
+  windowStart: timestamp('window_start').defaultNow().notNull()
+}, (table) => ({
+  userActionIdx: index('rate_limits_user_action_idx').on(table.userId, table.action)
+}));
